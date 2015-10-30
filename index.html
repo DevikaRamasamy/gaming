@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Droppable - Accept</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+  
+ 
+  </style>
+  <script>
+  $(function() {
+    $( ".draggable" ).draggable({
+      appendTo: "body"
+    });
+    $( ".droppable" ).droppable({
+      accept: ".draggable",
+      activeClass: "ui-state-hover",
+      hoverClass: "ui-state-active",
+      drop: function( event, ui ) {
+              $(ui.draggable).hide();
+       /* $( this )
+         .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Dropped!" );
+*/            //console.log($(this).find("p").text());
+              var a=ui.draggable.text();
+              var num=Number(a);
+              var b=$(this).find("p").text();
+              var num1=Number(b);
+              console.log(num+num1);
+              $(this).find("p").html(num+num1);
+
+      }
+    });
+  });
+  </script>
+</head>
+<body>
+ 
+   <div class="card1">
+    <div class="draggable droppable card" class="ui-widget-content">
+      <p>1</p>
+    </div>
+  </div>
+  <div class="card2">
+    <div class="draggable droppable card" class="ui-widget-content">
+      <p>2</p>
+    </div>
+  </div>
+  <div class="card3">
+    <div class="draggable droppable card" class="ui-widget-content">
+      <p>3</p>
+    </div>
+  </div>
+  <div class="card4">
+    <div class="draggable droppable card" class="ui-widget-content">
+      <p>4</p>
+    </div>
+  </div>
+  <div class="card5">
+    <div class="draggable droppable card" class="ui-widget-content">
+      <p>5</p>
+    </div>
+  </div>
+
+ 
+ 
+</body>
+</html>
